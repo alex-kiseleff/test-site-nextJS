@@ -10,6 +10,7 @@ import LeftColumnComponent, {
 } from '../components/LeftColumnComponent/LeftColumnComponent';
 import RightColumnComponent from '../components/RightColumnComponent/RightColumnComponent';
 import { Container, Section } from '../styles/pages/contacts.styles';
+import db from '../../DATA_BASE.json';
 
 interface IData {
 	contacts: Array<IContact>;
@@ -27,16 +28,17 @@ const ContactsComponent: NextPage<IData> = (contacts): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch('http://localhost:3000/contacts');
-		const contacts = await response.json();
+// 		const response = await fetch('http://localhost:3000/contacts');
+// 		const contacts = await response.json();
+		const contacts = db.contacts;
 
-		if (contacts.errors) {
-			return { notFound: true };
-		}
+// 		if (contacts.errors) {
+// 			return { notFound: true };
+// 		}
 
-		if (!contacts) {
-			return { notFound: true };
-		}
+// 		if (!contacts) {
+// 			return { notFound: true };
+// 		}
 		return {
 			props: {
 				contacts,

@@ -31,10 +31,10 @@ const MainComponent: NextPage<IData> = ({ panelsServices }): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const response = await fetch('http://localhost:3000/panels-services');
-	const panelsServices = await response.json();
-
 	try {
+		const response = await fetch('http://localhost:3000/panels-services');
+		const panelsServices = await response.json();
+	
 		if (panelsServices.errors) {
 			return { notFound: true };
 		}

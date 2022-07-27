@@ -11,7 +11,7 @@ import InformationColumn, {
 import { INewsBlock } from '../components/NewsBlockComponent/NewsBlockComponent';
 import NewsColumnComponent from '../components/NewsColumnComponent/NewsColumnComponent';
 import { Container, Section } from '../styles/pages/about.styles';
-import db from '../../DATA_BASE.json';+
+import db from '../../DATA_BASE.json';
 
 interface IProps {
 	about: Array<IAbout>;

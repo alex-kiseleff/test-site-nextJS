@@ -7,7 +7,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import OperatorCardComponent from '../components/OperatorCardComponent/OperatorCardComponent';
 import { Container, Section } from '../styles/pages/pay_for_mobile.styles';
-import db from '../../DATA_BASE.json';
 
 export interface IOperator {
 	id: string;
@@ -35,17 +34,16 @@ const PayForMobileComponent: NextPage<IData> = ({ operators }): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-// 		const response = await fetch('http://localhost:3000/operators');
-// 		const operators = await response.json();
-		const operators = db.operators;
+		const response = await fetch(`${process.env.API_HOST}/operators`);
+		const operators = await response.json();
 
-// 		if (operators.errors) {
-// 			return { notFound: true };
-// 		}
+		if (operators.errors) {
+			return { notFound: true };
+		}
 
-// 		if (!operators) {
-// 			return { notFound: true };
-// 		}
+		if (!operators) {
+			return { notFound: true };
+		}
 		return {
 			props: {
 				operators,

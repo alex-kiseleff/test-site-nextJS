@@ -26,7 +26,7 @@ const NewsComponent: NextPage<IData> = ({ news }): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	try {
 		const response = await fetch(
-			`http://localhost:3000/news?id=${ctx.query.id}`
+			`${process.env.API_HOST}/news?id=${ctx.query.id}`
 		);
 		const news = await response.json();
 		

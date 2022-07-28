@@ -73,7 +73,7 @@ const ToPayComponent: NextPage<IData> = ({ propsToPay }): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	try {
 		const response = await fetch(
-			`http://localhost:3000/operators?id=${ctx.query.id}`
+			`${process.env.API_HOST}/operators?id=${ctx.query.id}`
 		);
 		const propsToPay = await response.json();
 

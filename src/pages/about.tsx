@@ -11,7 +11,6 @@ import InformationColumn, {
 import { INewsBlock } from '../components/NewsBlockComponent/NewsBlockComponent';
 import NewsColumnComponent from '../components/NewsColumnComponent/NewsColumnComponent';
 import { Container, Section } from '../styles/pages/about.styles';
-import db from '../../DATA_BASE.json';
 
 interface IProps {
 	about: Array<IAbout>;
@@ -31,21 +30,19 @@ const AboutComponent: NextPage<IProps> = (props): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-// 		const response = await fetch('http://localhost:3000/info-about');
-// 		const about = await response.json();
-		const about = db['info-about'];
+		const response = await fetch(`${process.env.API_HOST}/info-about`);
+		const about = await response.json();
 
-// 		const res = await fetch('http://localhost:3000/news');
-// 		const news = await res.json();
-		const news = db.news;
+		const res = await fetch(`${process.env.API_HOST}/news`);
+		const news = await res.json();
 
-// 		if (about.errors || !about) {
-// 			return { notFound: true };
-// 		}
+		if (about.errors || !about) {
+			return { notFound: true };
+		}
 
-// 		if (news.error || !news) {
-// 			return { notFound: true };
-// 		}
+		if (news.error || !news) {
+			return { notFound: true };
+		}
 		return {
 			props: {
 				about,

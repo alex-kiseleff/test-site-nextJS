@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import openBurgerMenuSlice from './slices/openBurgerMenuSlice';
 import messengerSlice from './slices/messengerSlice';
 import panelPayForPhoneSlice from './slices/panelPayForPhoneSlice';
-import fetchSubmit from './slices/fetchSubmit';
 
 const makeStore = () => {
 	return configureStore({
@@ -10,7 +9,6 @@ const makeStore = () => {
 			messengerSlice,
 			openBurgerMenuSlice,
 			panelPayForPhoneSlice,
-			fetchSubmit,
 		},
 	});
 };

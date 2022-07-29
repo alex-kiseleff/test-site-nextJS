@@ -68,17 +68,5 @@ const panelPayForPhoneSlice = createSlice({
 	},
 });
 
-export const {
-	checkValidOne,
-	checkValidTwo,
-	checkValidThree,
-	checkValidFour,
-	checkValidSum,
-	setValueInputOne,
-	setValueInputTwo,
-	setValueInputThree,
-	setValueInputFour,
-	setValueInputSum,
-	toggleButton,
-} = panelPayForPhoneSlice.actions;
+export const { checkValidOne, checkValidTwo, checkValidThree, checkValidFour, checkValidSum, setValueInputOne, setValueInputTwo, setValueInputThree, setValueInputFour, setValueInputSum, toggleButton } = panelPayForPhoneSlice.actions;
 export default panelPayForPhoneSlice.reducer;

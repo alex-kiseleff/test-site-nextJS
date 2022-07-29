@@ -28,11 +28,8 @@
 		"typescript": "^4.7.4"
 	},
 	"scripts": {
-		"dev": "npm run open-browser & next dev -p 3300",
-		"open-browser": "start chrome http://localhost:3300",
-		"db": "json-server --watch DATA_BASE.json",
+		"dev": "next dev",
 		"build": "next build",
-		"start": "next start",
-		"lint": "next lint --fix"
+		"start": "next start"
 	}
 }

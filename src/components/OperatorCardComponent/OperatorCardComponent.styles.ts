@@ -8,8 +8,7 @@ const Container = styled.li`
 	max-height: 10.588rem;
 	max-width: 17.4rem;
 	border-radius: 0.5rem;
-	box-shadow: 8px 8px 8px 1px
-		${({ theme }) => theme.colors.chadows.operatorCard};
+	box-shadow: 8px 8px 8px 1px ${({ theme }) => theme.colors.chadows.operatorCard};
 	overflow: hidden;
 	transition: ${({ theme }) => theme.durations.ms500};
 

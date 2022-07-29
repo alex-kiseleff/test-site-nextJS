@@ -6,9 +6,7 @@ const Container = styled.section`
 	flex-direction: column;
 	padding-top: 4.2rem;
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-	theme.media.maxWidthMD}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthMD}) {
 		padding-top: 1rem;
 
 		&::before {

@@ -6,30 +6,9 @@
 import React, { FC, MouseEvent, ReactElement, useEffect, useRef } from 'react';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useAppSelector from '../../hooks/useAppSelector';
-import {
-	setValueInputOne,
-	checkValidOne,
-	setValueInputTwo,
-	checkValidTwo,
-	setValueInputThree,
-	checkValidThree,
-	setValueInputFour,
-	checkValidFour,
-	setValueInputSum,
-	checkValidSum,
-	toggleButton,
-} from '../../store/slices/panelPayForPhoneSlice';
+import { setValueInputOne, checkValidOne, setValueInputTwo, checkValidTwo, setValueInputThree, checkValidThree, setValueInputFour, checkValidFour, setValueInputSum, checkValidSum, toggleButton } from '../../store/slices/panelPayForPhoneSlice';
 import { isInvalid, isTest } from '../../utilites/testValid';
-import {
-	ButtonReset,
-	Container,
-	InputFour,
-	InputOne,
-	InputThree,
-	InputTwo,
-	WrapElements,
-	WrapInput,
-} from './InputWithMaskComponent.styles';
+import { ButtonReset, Container, InputFour, InputOne, InputThree, InputTwo, WrapElements, WrapInput } from './InputWithMaskComponent.styles';
 
 const InputWithMaskComponent: FC = (): ReactElement => {
 	const dispatch = useAppDispatch();
@@ -37,15 +16,26 @@ const InputWithMaskComponent: FC = (): ReactElement => {
 	const refTwo = useRef<HTMLInputElement>(null);
 	const refThree = useRef<HTMLInputElement>(null);
 	const refFour = useRef<HTMLInputElement>(null);
-	const {
-		isOneValid,
-		isTwoValid,
-		isThreeValid,
-		oneInput,
-		twoInput,
-		threeInput,
-		fourInput,
-	} = useAppSelector((state) => state.panelPayForPhoneSlice);
+	const { isOneValid, isTwoValid, isThreeValid, oneInput, twoInput, threeInput, fourInput } = useAppSelector((state) => state.panelPayForPhoneSlice);
+
+	const clearInput = () => {
+		dispatch(checkValidOne(false));
+		dispatch(checkValidTwo(false));
+		dispatch(checkValidThree(false));
+		dispatch(checkValidFour(false));
+		dispatch(checkValidSum(false));
+		dispatch(setValueInputOne(''));
+		dispatch(setValueInputTwo(''));
+		dispatch(setValueInputThree(''));
+		dispatch(setValueInputFour(''));
+		dispatch(setValueInputSum(''));
+		dispatch(toggleButton(true));
+		(refOne.current as HTMLInputElement).focus();
+	};
+
+	useEffect(() => {
+		clearInput();
+	}, []);
 
 	const handlerInputOne = (e: { target: { value: string } }) => {
 		const value = e.target.value;
@@ -95,20 +85,10 @@ const InputWithMaskComponent: FC = (): ReactElement => {
 		}
 		dispatch(checkValidFour(false));
 	};
+
 	const handlerClear = (e: MouseEvent) => {
 		e.preventDefault();
-		dispatch(checkValidOne(false));
-		dispatch(checkValidTwo(false));
-		dispatch(checkValidThree(false));
-		dispatch(checkValidFour(false));
-		dispatch(checkValidSum(false));
-		dispatch(setValueInputOne(''));
-		dispatch(setValueInputTwo(''));
-		dispatch(setValueInputThree(''));
-		dispatch(setValueInputFour(''));
-		dispatch(setValueInputSum(''));
-		dispatch(toggleButton(true));
-		(refOne.current as HTMLInputElement).focus();
+		clearInput();
 	};
 
 	useEffect(() => {
@@ -130,47 +110,13 @@ const InputWithMaskComponent: FC = (): ReactElement => {
 				<WrapInput>
 					<span>{'+7'}</span>
 					<span>{'('}</span>
-					<InputOne
-						onChange={handlerInputOne}
-						value={oneInput}
-						ref={refOne}
-						name={'oneInput'}
-						autoFocus={true}
-						type='tel'
-						tabIndex={1}
-						id={'phone'}
-						autoComplete={'off'}
-					/>
+					<InputOne onChange={handlerInputOne} value={oneInput} ref={refOne} name={'oneInput'} autoFocus={true} type='tel' tabIndex={1} id={'phone'} autoComplete={'off'} />
 					<span>{')'}</span>
-					<InputTwo
-						onChange={handlerInputTwo}
-						value={twoInput}
-						ref={refTwo}
-						name={'twoInput'}
-						type='tel'
-						tabIndex={2}
-						autoComplete={'off'}
-					/>
+					<InputTwo onChange={handlerInputTwo} value={twoInput} ref={refTwo} name={'twoInput'} type='tel' tabIndex={2} autoComplete={'off'} />
 					<span>{'-'}</span>
-					<InputThree
-						onChange={handlerInputThree}
-						value={threeInput}
-						ref={refThree}
-						name={'threeInput'}
-						type='tel'
-						tabIndex={3}
-						autoComplete={'off'}
-					/>
+					<InputThree onChange={handlerInputThree} value={threeInput} ref={refThree} name={'threeInput'} type='tel' tabIndex={3} autoComplete={'off'} />
 					<span>{'-'}</span>
-					<InputFour
-						onChange={handlerInputFour}
-						value={fourInput}
-						ref={refFour}
-						name={'fourInput'}
-						type='tel'
-						tabIndex={4}
-						autoComplete={'off'}
-					/>
+					<InputFour onChange={handlerInputFour} value={fourInput} ref={refFour} name={'fourInput'} type='tel' tabIndex={4} autoComplete={'off'} />
 				</WrapInput>
 				<ButtonReset type={'button'} onClick={handlerClear}>
 					{'ОЧИСТИТЬ'}

@@ -3,13 +3,7 @@
  * @returns {ReactElement}
  */
 import React, { FC, ReactElement } from 'react';
-import {
-	Author,
-	Container,
-	Footer,
-	Paragraph,
-	Title,
-} from './FooterComponent.styles';
+import { Author, Container, Footer, Paragraph, Title } from './FooterComponent.styles';
 
 const FooterComponent: FC = (): ReactElement => {
 	return (

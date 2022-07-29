@@ -14,10 +14,7 @@ export interface INewsBlock {
 	description: string;
 }
 
-const NewsBlockComponent: FC<INewsBlock> = ({
-	title,
-	description,
-}): ReactElement => {
+const NewsBlockComponent: FC<INewsBlock> = ({ title, description }): ReactElement => {
 	return (
 		<Article>
 			<Title>{title}</Title>

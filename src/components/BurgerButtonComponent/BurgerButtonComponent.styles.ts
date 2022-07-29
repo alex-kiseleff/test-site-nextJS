@@ -22,10 +22,7 @@ const MenuButton = styled.button<IBurgerMenu>`
 	transform-origin: 16px 11px;
 
 	${Title}:nth-of-type(1) {
-		transform: ${({ isMenuOpen }) =>
-		isMenuOpen
-			? 'rotate(45deg) translate(0.4rem, 0.3rem)'
-			: 'rotate(0)'};
+		transform: ${({ isMenuOpen }) => (isMenuOpen ? 'rotate(45deg) translate(0.4rem, 0.3rem)' : 'rotate(0)')};
 		width: ${({ isMenuOpen }) => (isMenuOpen ? '1.5rem' : '2rem')};
 	}
 	${Title}:nth-of-type(2) {
@@ -33,10 +30,7 @@ const MenuButton = styled.button<IBurgerMenu>`
 		pointer-events: none;
 	}
 	${Title}:nth-of-type(3) {
-		transform: ${({ isMenuOpen }) =>
-		isMenuOpen
-			? 'rotate(-45deg) translate(0.4rem, -0.3rem)'
-			: 'rotate(0)'};
+		transform: ${({ isMenuOpen }) => (isMenuOpen ? 'rotate(-45deg) translate(0.4rem, -0.3rem)' : 'rotate(0)')};
 		width: ${({ isMenuOpen }) => (isMenuOpen ? '1.5rem' : '2rem')};
 	}
 `;

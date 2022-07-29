@@ -18,14 +18,10 @@ const Section = styled.article<IVisibility>`
 	z-index: 30;
 	transition: ${({ theme }) => theme.durations.ms500};
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthSM}) and (max-width: ${({ theme }) =>
-			theme.media.maxWidthMD}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthSM}) and (max-width: ${({ theme }) => theme.media.maxWidthMD}) {
 		height: 1.3rem;
 	}
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-			theme.media.maxWidthSM}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 		height: 1.1rem;
 	}
 
@@ -38,17 +34,11 @@ const Section = styled.article<IVisibility>`
 			margin: 0 auto;
 
 			${Title} {
-				@media (min-width: ${({ theme }) =>
-				theme.media.minWidthSM}) and (max-width: ${({
-					theme,
-				}) => theme.media.maxWidthMD}) {
+				@media (min-width: ${({ theme }) => theme.media.minWidthSM}) and (max-width: ${({ theme }) => theme.media.maxWidthMD}) {
 					font-size: 1.1rem;
 				}
 
-				@media (min-width: ${({ theme }) =>
-				theme.media.minWidthXS}) and (max-width: ${({
-					theme,
-				}) => theme.media.maxWidthSM}) {
+				@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 					font-size: 0.9rem;
 				}
 			}

@@ -13,9 +13,7 @@ const Title = styled.h3`
 	font-family: ${({ theme }) => theme.fonts.robotoMedium};
 	padding-bottom: 1rem;
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-	theme.media.maxWidthSM}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 		font-size: 1rem;
 	}
 `;

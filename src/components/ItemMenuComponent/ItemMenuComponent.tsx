@@ -16,11 +16,7 @@ export interface IItemMenu {
 	activeStyle: boolean;
 }
 
-const ItemMenuComponent: FC<IItemMenu> = ({
-	path,
-	name,
-	activeStyle,
-}): ReactElement => {
+const ItemMenuComponent: FC<IItemMenu> = ({ path, name, activeStyle }): ReactElement => {
 	return (
 		<ListItem active={activeStyle}>
 			<Link href={path}>

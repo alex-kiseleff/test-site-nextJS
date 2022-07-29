@@ -10,10 +10,7 @@ import Link from 'next/link';
 import { IPanelService } from '../../pages';
 import { PanelService } from './PanelServiceComponent.styles';
 
-const PanelServiceComponent: FC<IPanelService> = ({
-	path,
-	title,
-}): ReactElement => {
+const PanelServiceComponent: FC<IPanelService> = ({ path, title }): ReactElement => {
 	return (
 		<PanelService>
 			<Link href={path}>

@@ -3,14 +3,7 @@
  * @returns {ReactElement}
  */
 import React, { FC, ReactElement } from 'react';
-import {
-	Container,
-	Header,
-	Img,
-	Picture,
-	TextLeft,
-	TextRight,
-} from './FirstHeaderComponent.styles';
+import { Container, Header, Img, Picture, TextLeft, TextRight } from './FirstHeaderComponent.styles';
 import sc_png from '/public/images/header/scrooge_mc_duck/png/scrooge_mc_duck.png';
 import sc_webp from '/public/images/header/scrooge_mc_duck/webp/scrooge_mc_duck.webp';
 

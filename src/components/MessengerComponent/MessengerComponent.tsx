@@ -9,12 +9,7 @@ import useAppDispatch from '../../hooks/useAppDispatch';
 import useAppSelector from '../../hooks/useAppSelector';
 import { setMessage } from '../../store/slices/messengerSlice';
 import { setCondition } from '../../store/slices/openBurgerMenuSlice';
-import {
-	Container,
-	IVisibility,
-	Section,
-	Title,
-} from './MessengerComponent.styles';
+import { Container, IVisibility, Section, Title } from './MessengerComponent.styles';
 
 const MessengerComponent: FC<IVisibility> = ({ message }): ReactElement => {
 	const dispatch = useAppDispatch();

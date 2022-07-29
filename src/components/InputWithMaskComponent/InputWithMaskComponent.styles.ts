@@ -24,8 +24,7 @@ const WrapInput = styled.div`
 
 	input {
 		font-weight: 600;
-		border-bottom: 1px solid
-			${({ theme }) => theme.colors.border.inputWithMask};
+		border-bottom: 1px solid ${({ theme }) => theme.colors.border.inputWithMask};
 		font-size: 1rem;
 		background: inherit;
 		padding: 0 0.1rem 0.1rem;
@@ -34,8 +33,7 @@ const WrapInput = styled.div`
 	span {
 		font-weight: 600;
 		font-size: 1rem;
-		border-bottom: 1px solid
-			${({ theme }) => theme.colors.border.inputWithMask};
+		border-bottom: 1px solid ${({ theme }) => theme.colors.border.inputWithMask};
 		padding: 0 0.1rem 0.1rem;
 	}
 `;
@@ -77,13 +75,4 @@ const ButtonReset = styled.button`
 	}
 `;
 
-export {
-	Container,
-	WrapElements,
-	WrapInput,
-	InputFour,
-	InputOne,
-	InputThree,
-	InputTwo,
-	ButtonReset,
-};
+export { Container, WrapElements, WrapInput, InputFour, InputOne, InputThree, InputTwo, ButtonReset };

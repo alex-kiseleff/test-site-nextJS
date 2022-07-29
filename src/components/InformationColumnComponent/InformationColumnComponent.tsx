@@ -5,11 +5,7 @@
  * @returns {ReactElement}
  */
 import React, { FC, ReactElement } from 'react';
-import {
-	Container,
-	Paragraph,
-	Title,
-} from './InformationColumnComponent.styles';
+import { Container, Paragraph, Title } from './InformationColumnComponent.styles';
 
 export interface IAbout {
 	id: string;

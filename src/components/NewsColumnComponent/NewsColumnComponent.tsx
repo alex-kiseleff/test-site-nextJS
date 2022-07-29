@@ -5,9 +5,7 @@
  */
 import React, { FC, ReactElement } from 'react';
 import Link from 'next/link';
-import NewsBlockComponent, {
-	INewsBlock,
-} from '../NewsBlockComponent/NewsBlockComponent';
+import NewsBlockComponent, { INewsBlock } from '../NewsBlockComponent/NewsBlockComponent';
 import { Container } from './NewsColumnComponent.styles';
 
 interface IData {
@@ -19,11 +17,7 @@ const NewsColumnComponent: FC<IData> = ({ news }): ReactElement => {
 		<Container>
 			{news?.map((item: INewsBlock) => {
 				return (
-					<Link
-						key={item.id}
-						href={'/news/[id]'}
-						as={`/news/${item.id}`}
-					>
+					<Link key={item.id} href={'/news/[id]'} as={`/news/${item.id}`}>
 						<a>
 							<NewsBlockComponent {...item} />
 						</a>

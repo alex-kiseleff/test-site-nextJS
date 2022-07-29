@@ -18,20 +18,18 @@ interface IData {
 const LeftColumnComponent: FC<IData> = ({ contacts }): ReactElement => {
 	return (
 		<Section>
-			{contacts?.map(
-				({ id, post, name, phone, number, address, email }) => {
-					return (
-						<Container key={id}>
-							<Data>{post}</Data>
-							<Data>{name}</Data>
-							<Data>{phone}</Data>
-							<Data>{number}</Data>
-							{address && <Data>{address}</Data>}
-							{email && <Data>{email}</Data>}
-						</Container>
-					);
-				}
-			)}
+			{contacts?.map(({ id, post, name, phone, number, address, email }) => {
+				return (
+					<Container key={id}>
+						<Data>{post}</Data>
+						<Data>{name}</Data>
+						<Data>{phone}</Data>
+						<Data>{number}</Data>
+						{address && <Data>{address}</Data>}
+						{email && <Data>{email}</Data>}
+					</Container>
+				);
+			})}
 		</Section>
 	);
 };

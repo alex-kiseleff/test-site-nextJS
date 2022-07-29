@@ -23,9 +23,7 @@ const MenuComponent: FC = (): ReactElement => {
 	return (
 		<NavList>
 			{menu.map((props) => {
-				props?.id === idActive
-					? (props.activeStyle = true)
-					: (props.activeStyle = false);
+				props?.id === idActive ? (props.activeStyle = true) : (props.activeStyle = false);
 				return <ItemMenuComponent key={props.id} {...props} />;
 			})}
 		</NavList>

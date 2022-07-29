@@ -26,15 +26,11 @@ const Container = styled.div`
 const Title = styled.h1`
 	font-size: ${({ theme }) => theme.sizes.font.secondHeader.title};
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthSM}) and (max-width: ${({ theme }) =>
-			theme.media.maxWidthMD}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthSM}) and (max-width: ${({ theme }) => theme.media.maxWidthMD}) {
 		font-size: 1.1rem;
 	}
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-			theme.media.maxWidthSM}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 		font-size: 0.9rem;
 	}
 `;

@@ -12,8 +12,7 @@ const PanelService = styled.article`
 	min-height: 3rem;
 	width: 100%;
 	border-radius: 0.3rem;
-	box-shadow: 8px 8px 8px 1px
-		${({ theme }) => theme.colors.chadows.panelService};
+	box-shadow: 8px 8px 8px 1px ${({ theme }) => theme.colors.chadows.panelService};
 	overflow: hidden;
 	transition: ${({ theme }) => theme.durations.ms200};
 
@@ -37,9 +36,7 @@ const PanelService = styled.article`
 		justify-content: center;
 	}
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-	theme.media.maxWidthSM}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 		font-size: 1.1rem;
 	}
 `;

@@ -5,9 +5,7 @@
 import React, { FC, ReactElement, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import useAppSelector from '../../hooks/useAppSelector';
-import ItemMenuComponent, {
-	IItemMenu,
-} from '../ItemMenuComponent/ItemMenuComponent';
+import ItemMenuComponent, { IItemMenu } from '../ItemMenuComponent/ItemMenuComponent';
 import { menu } from '../../configurations/menu';
 import { Container, Wrapper } from './SideMenuComponent.styles';
 
@@ -28,9 +26,7 @@ const SideMenuComponent: FC = (): ReactElement => {
 		<Wrapper>
 			<Container isMenuOpen={isMenuOpen}>
 				{menu.map((props: IItemMenu) => {
-					props?.id === idActive
-						? (props.activeStyle = true)
-						: (props.activeStyle = false);
+					props?.id === idActive ? (props.activeStyle = true) : (props.activeStyle = false);
 					return <ItemMenuComponent key={props.id} {...props} />;
 				})}
 			</Container>

@@ -18,8 +18,7 @@ const Container = styled.ul<IBurgerMenu>`
 	opacity: 0.9;
 	padding: 1.5rem;
 	background: ${({ theme }) => theme.colors.bg.secondHeader};
-	transform: ${({ isMenuOpen }) =>
-		isMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
+	transform: ${({ isMenuOpen }) => (isMenuOpen ? 'translateX(0)' : 'translateX(-100%)')};
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 	${ListItem} {

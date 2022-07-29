@@ -3,9 +3,7 @@ import styled from 'styled-components';
 const Section = styled.section`
 	font-size: 1.5rem;
 
-	@media (min-width: ${({ theme }) =>
-		theme.media.minWidthXS}) and (max-width: ${({ theme }) =>
-	theme.media.maxWidthSM}) {
+	@media (min-width: ${({ theme }) => theme.media.minWidthXS}) and (max-width: ${({ theme }) => theme.media.maxWidthSM}) {
 		font-size: 1.1rem;
 	}
 `;

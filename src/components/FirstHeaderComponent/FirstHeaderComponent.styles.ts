@@ -6,8 +6,7 @@ const Header = styled.header`
 	background: ${({ theme }) => theme.colors.bg.firstHeader};
 	background-image: image-set(url(${bg_webp.src}) 1x, url(${bg_png.src}) 1x);
 	background-size: cover;
-	box-shadow: inset 0 0 15vw 0.5vw
-		${({ theme }) => theme.colors.chadows.firstHeader.pure};
+	box-shadow: inset 0 0 15vw 0.5vw ${({ theme }) => theme.colors.chadows.firstHeader.pure};
 	max-width: 100%;
 `;
 
@@ -35,10 +34,7 @@ const Picture = styled.picture`
 `;
 
 const Img = styled.img`
-	filter: drop-shadow(
-		0.5vw 0.5vw 0.3vw
-			${({ theme }) => theme.colors.chadows.firstHeader.scrooge}
-	);
+	filter: drop-shadow(0.5vw 0.5vw 0.3vw ${({ theme }) => theme.colors.chadows.firstHeader.scrooge});
 	height: auto;
 	max-width: 7vw;
 	width: 100%;
@@ -46,14 +42,12 @@ const Img = styled.img`
 
 const TextLeft = styled.div`
 	align-self: flex-start;
-	text-shadow: 0.5vw 0.5vw 0.3vw
-		${({ theme }) => theme.colors.chadows.firstHeader.font};
+	text-shadow: 0.5vw 0.5vw 0.3vw ${({ theme }) => theme.colors.chadows.firstHeader.font};
 `;
 
 const TextRight = styled.div`
 	align-self: flex-end;
-	text-shadow: 0.5vw 0.5vw 0.3vw
-		${({ theme }) => theme.colors.chadows.firstHeader.font};
+	text-shadow: 0.5vw 0.5vw 0.3vw ${({ theme }) => theme.colors.chadows.firstHeader.font};
 `;
 
 export { Header, Container, Picture, Img, TextLeft, TextRight };

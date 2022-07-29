@@ -2,44 +2,40 @@
  * @component NewsComponent - рендерит новостную страницу [News] с
  * выбранной новостью на странице [About].
  * @type {NextPage<Array<INewsBlock>>}.
- * @param {Array<INewsBlock>} news - данные с сервера.
+ * @param {Array<INewsBlock>} newsCurrent - данные с сервера.
  * @returns {JSX.Element}.
  */
 import { GetServerSideProps, NextPage } from 'next';
-import NewsBlockComponent, {
-	INewsBlock,
-} from '../../components/NewsBlockComponent/NewsBlockComponent';
+import NewsBlockComponent, { INewsBlock } from '../../components/NewsBlockComponent/NewsBlockComponent';
 import { Container, Section } from '../../styles/pages/news.styles';
 
-interface IData {
-	news: Array<INewsBlock>;
+interface IProps {
+	newsCurrent: Array<INewsBlock>;
 }
-
-const NewsComponent: NextPage<IData> = ({ news }): JSX.Element => {
+const NewsComponent: NextPage<IProps> = ({ newsCurrent }): JSX.Element => {
 	return (
 		<Section>
-			<Container>{<NewsBlockComponent {...news[0]} />}</Container>
+			<Container>{<NewsBlockComponent {...newsCurrent[0]} />}</Container>
 		</Section>
 	);
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+	const { id } = ctx.query;
 	try {
-		const response = await fetch(
-			`${process.env.API_HOST}/news?id=${ctx.query.id}`
-		);
-		const news = await response.json();
-		
-		if (news.errors) {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/newsAPI?id=${id}`);
+		const data = await response.json();
+
+		if (data.errors) {
 			return { notFound: true };
 		}
 
-		if (!news) {
+		if (!data) {
 			return { notFound: true };
 		}
 		return {
 			props: {
-				news,
+				newsCurrent: data,
 			},
 		};
 	} catch (error) {

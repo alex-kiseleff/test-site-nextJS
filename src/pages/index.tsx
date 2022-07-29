@@ -32,19 +32,20 @@ const MainComponent: NextPage<IData> = ({ panelsServices }): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.API_HOST}/panels-services`);
-		const panelsServices = await response.json();
-	
-		if (panelsServices.errors) {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const data = await response.json();
+
+		if (data.errors) {
 			return { notFound: true };
 		}
 
-		if (!panelsServices) {
+		if (!data) {
 			return { notFound: true };
 		}
+
 		return {
 			props: {
-				panelsServices,
+				panelsServices: data['panels-services'],
 			},
 		};
 	} catch (error) {

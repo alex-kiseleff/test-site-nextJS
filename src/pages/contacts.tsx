@@ -5,9 +5,7 @@
  * @returns {JSX.Element}
  */
 import { GetStaticProps, NextPage } from 'next';
-import LeftColumnComponent, {
-	IContact,
-} from '../components/LeftColumnComponent/LeftColumnComponent';
+import LeftColumnComponent, { IContact } from '../components/LeftColumnComponent/LeftColumnComponent';
 import RightColumnComponent from '../components/RightColumnComponent/RightColumnComponent';
 import { Container, Section } from '../styles/pages/contacts.styles';
 
@@ -27,19 +25,19 @@ const ContactsComponent: NextPage<IData> = (contacts): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.API_HOST}/contacts`);
-		const contacts = await response.json();
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const data = await response.json();
 
-		if (contacts.errors) {
+		if (data.errors) {
 			return { notFound: true };
 		}
 
-		if (!contacts) {
+		if (!data) {
 			return { notFound: true };
 		}
 		return {
 			props: {
-				contacts,
+				contacts: data.contacts,
 			},
 		};
 	} catch (error) {

@@ -34,19 +34,19 @@ const PayForMobileComponent: NextPage<IData> = ({ operators }): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.API_HOST}/operators`);
-		const operators = await response.json();
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const data = await response.json();
 
-		if (operators.errors) {
+		if (data.errors) {
 			return { notFound: true };
 		}
 
-		if (!operators) {
+		if (!data) {
 			return { notFound: true };
 		}
 		return {
 			props: {
-				operators,
+				operators: data.operators,
 			},
 		};
 	} catch (error) {

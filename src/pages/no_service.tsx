@@ -11,9 +11,7 @@ import { Title, Container } from '../styles/pages/no_service.styles';
 const NoServiceComponent: NextPage = (): JSX.Element => {
 	return (
 		<Container>
-			<Title>
-				{'К сожалению данный сервис временно не предоставляется.'}
-			</Title>
+			<Title>{'К сожалению данный сервис временно не предоставляется.'}</Title>
 			<Title>{'Ведутся технические работы.'}</Title>
 			<Link href={'/'}>
 				<a>{'Хочу на главную страницу'}</a>

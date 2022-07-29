@@ -5,9 +5,7 @@
  * @returns {JSX.Element}
  */
 import { GetStaticProps, NextPage } from 'next';
-import InformationColumn, {
-	IAbout,
-} from '../components/InformationColumnComponent/InformationColumnComponent';
+import InformationColumn, { IAbout } from '../components/InformationColumnComponent/InformationColumnComponent';
 import { INewsBlock } from '../components/NewsBlockComponent/NewsBlockComponent';
 import NewsColumnComponent from '../components/NewsColumnComponent/NewsColumnComponent';
 import { Container, Section } from '../styles/pages/about.styles';
@@ -30,23 +28,23 @@ const AboutComponent: NextPage<IProps> = (props): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.API_HOST}/info-about`);
-		const about = await response.json();
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const dataAbout = await response.json();
 
-		const res = await fetch(`${process.env.API_HOST}/news`);
-		const news = await res.json();
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const dataNews = await res.json();
 
-		if (about.errors || !about) {
+		if (dataAbout.errors || !dataAbout) {
 			return { notFound: true };
 		}
 
-		if (news.error || !news) {
+		if (dataNews.error || !dataNews) {
 			return { notFound: true };
 		}
 		return {
 			props: {
-				about,
-				news,
+				about: dataAbout['info-about'],
+				news: dataNews.news,
 			},
 		};
 	} catch (error) {

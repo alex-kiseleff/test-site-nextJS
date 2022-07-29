@@ -20,16 +20,8 @@ function App({ Component, pageProps }: AppProps) {
 					<Head>
 						<meta charSet='UTF-8' />
 						<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-						<meta
-							name='viewport'
-							content='width=device-width, initial-scale=1.0'
-						/>
-						<link
-							rel='icon'
-							href='/images/favicon/favicon.ico'
-							type='image/x-icon'
-							sizes='64x64'
-						/>
+						<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+						<link rel='icon' href='/images/favicon/favicon.ico' type='image/x-icon' sizes='64x64' />
 						<title>{'Платежная система'}</title>
 					</Head>
 					<NextNProgress {...progressBar} />

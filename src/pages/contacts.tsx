@@ -25,7 +25,7 @@ const ContactsComponent: NextPage<IData> = (contacts): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const response = await fetch(`${process.env.API_HOST}/api/db`);
 		const data = await response.json();
 
 		if (data.errors) {

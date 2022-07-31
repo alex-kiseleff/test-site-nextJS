@@ -48,7 +48,7 @@ const ToPayComponent: NextPage<IData> = ({ operatorCurrent }): JSX.Element => {
 			return item[1].tagName === 'INPUT' ? { ...obj, [item[1].name]: item[1].value } : obj;
 		}, {} as IDataForSubmit);
 
-		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/to_payAPI`, {
+		const response = await fetch(`${process.env.API_HOST}/api/to_pay`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(dataForSend),

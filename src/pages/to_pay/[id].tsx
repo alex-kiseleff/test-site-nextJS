@@ -82,7 +82,7 @@ const ToPayComponent: NextPage<IData> = ({ operatorCurrent }): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const { id } = ctx.query;
 	try {
-		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/to_payAPI?id=${id}`);
+		const response = await fetch(`${process.env.API_HOST}/api/to_pay?id=${id}`);
 		const data = await response.json();
 
 		if (data.errors) {

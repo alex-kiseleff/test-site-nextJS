@@ -28,10 +28,10 @@ const AboutComponent: NextPage<IProps> = (props): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const response = await fetch(`${process.env.API_HOST}/api/db`);
 		const dataAbout = await response.json();
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/db`);
+		const res = await fetch(`${process.env.API_HOST}/api/db`);
 		const dataNews = await res.json();
 
 		if (dataAbout.errors || !dataAbout) {

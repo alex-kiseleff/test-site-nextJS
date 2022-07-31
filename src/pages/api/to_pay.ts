@@ -16,7 +16,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
 	if (req.method === 'POST') {
 		// Эмуляция post-запроса в рандомном порядке
-// 		if (Math.random() > 0.5) {
+		if (Math.random() > 0.5) {
 			// ... Обработка данных ...
 			const pay: Array<INewData> = db.pay;
 			const { oneInput, twoInput, threeInput, fourInput, sumInput } = req.body;
@@ -26,9 +26,9 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 			};
 			pay.push(newData);
 			return res.status(201).json(newData);
-// 		} else {
-// 			return res.status(503).json({});
-// 		}
+		} else {
+			return res.status(503).json({});
+		}
 	}
 };
 

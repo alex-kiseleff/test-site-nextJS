@@ -16,6 +16,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
 	if (req.method === 'POST') {
 		// Эмуляция post-запроса в рандомном порядке
+		console.log({req});
 		if (Math.random() > 0.5) {
 			// ... Обработка данных ...
 			const pay: Array<INewData> = db.pay;
